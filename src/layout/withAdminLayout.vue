@@ -41,8 +41,8 @@
               <img
                 :src="
                   !darkMode
-                    ? require(`../static/img/Logo_Dark.svg`)
-                    : require(`../static/img/Logo_white.png`)
+                    ? require(`../static/img/Logo_direa.png`)
+                    : require(`../static/img/Logo_direa.png`)
                 "
                 alt="logo"
               />
@@ -181,14 +181,7 @@
             >
               <a-row>
                 <a-col :md="12" :xs="24">
-                  <span class="admin-footer__copyright">2021 © SovWare</span>
-                </a-col>
-                <a-col :md="12" :xs="24">
-                  <div class="admin-footer__links">
-                    <router-link to="#">Profile</router-link>
-                    <router-link to="#">Team</router-link>
-                    <router-link to="#">Contacts</router-link>
-                  </div>
+                  <span class="admin-footer__copyright">2023 © Direa</span>
                 </a-col>
               </a-row>
             </Footer>

@@ -319,12 +319,4 @@ const AtbdTopDropdwon = Styled.div`
     }
 `;
 
-const NavAuth = Styled.span`
-    direction: ${({ theme }) => (theme.rtl ? 'rtl' : 'ltr')};
-    text-align: ${({ theme }) => (theme.rtl ? 'right' : 'left')};
-    i, svg, img {
-        ${({ theme }) => (theme.rtl ? 'margin-left' : 'margin-right')}: 8px;
-    }
-`;
-
-export { InfoWraper, SettingDropdwon, NestedDropdwon, UserDropDwon, AtbdTopDropdwon, NavAuth };
+export { InfoWraper, SettingDropdwon, NestedDropdwon, UserDropDwon, AtbdTopDropdwon };

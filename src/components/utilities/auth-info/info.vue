@@ -1,71 +1,6 @@
 <template>
     <InfoWraper>
-        <Message />
         <Notification />
-        <Settings />
-        <Support />
-        <div class="nav-author">
-            <sdDropdown placement="bottomRight" :action="['click']">
-                <template v-slot:overlay>
-                    <NavAuth>
-                        <router-link
-                            @click="() => onFlagChangeHandle('english')"
-                            to="#"
-                        >
-                            <img
-                                :src="
-                                    require('../../../static/img/flag/english.png')
-                                "
-                                alt=""
-                            />
-                            <span>English</span>
-                        </router-link>
-                        <router-link
-                            @click="() => onFlagChangeHandle('germany')"
-                            to="#"
-                        >
-                            <img
-                                :src="
-                                    require('../../../static/img/flag/germany.png')
-                                "
-                                alt=""
-                            />
-                            <span>Germany</span>
-                        </router-link>
-                        <router-link
-                            @click="() => onFlagChangeHandle('spain')"
-                            to="#"
-                        >
-                            <img
-                                :src="
-                                    require('../../../static/img/flag/spain.png')
-                                "
-                                alt=""
-                            />
-                            <span>Spain</span>
-                        </router-link>
-                        <router-link
-                            @click="() => onFlagChangeHandle('turky')"
-                            to="#"
-                        >
-                            <img
-                                :src="
-                                    require('../../../static/img/flag/turky.png')
-                                "
-                                alt=""
-                            />
-                            <span>Turky</span>
-                        </router-link>
-                    </NavAuth>
-                </template>
-                <a to="#" class="head-example">
-                    <img
-                        :src="require(`../../../static/img/flag/${flag}.png`)"
-                        alt=""
-                    />
-                </a>
-            </sdDropdown>
-        </div>
 
         <div class="nav-author">
             <sdPopover
@@ -140,11 +75,8 @@
 </template>
 
 <script>
-import { InfoWraper, NavAuth, UserDropDwon } from './auth-info-style';
-import Support from './Support';
-import Settings from './Settings';
+import { InfoWraper, UserDropDwon } from './auth-info-style';
 import Notification from './Notification';
-import Message from './Message';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import { LogoutOutlined } from '@ant-design/icons-vue';
@@ -154,12 +86,8 @@ export default defineComponent({
     name: 'AuthInfo',
     components: {
         InfoWraper,
-        NavAuth,
         UserDropDwon,
-        Support,
-        Settings,
         Notification,
-        Message,
         LogoutOutlined,
     },
     setup() {

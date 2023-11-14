@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { getItem } from '../../utility/localStorageControl';
 
-const API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT;
+// const API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT;
+const API_ENDPOINT = "http://localhost:9090/";
 
 const authHeader = () => ({
   Authorization: `Bearer ${getItem('access_token')}`,
@@ -10,7 +11,7 @@ const authHeader = () => ({
 const client = axios.create({
   baseURL: API_ENDPOINT,
   headers: {
-    Authorization: `Bearer ${getItem('access_token')}`,
+    ...authHeader(),
     'Content-Type': 'application/json',
   },
 });

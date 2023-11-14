@@ -6,14 +6,13 @@
           <img :src="require('@/static/img/auth/topShape.png')" alt="" class="topShape" />
           <img :src="require('@/static/img/auth/bottomShape.png')" alt="" class="bottomShape" />
           <Content>
-            <img :style="{ width: '150px' }" :src="require('@/static/img/Logo_Dark.svg')" alt="" />
+            <img :style="{ width: '150px' }" :src="require('@/static/img/Logo_direa.png')" alt="" />
             <br />
             <br />
             <sdHeading as="h1">
-              StrikingDash Vue <br />
-              Web Application
+              DIREA <br />
+              Back Office
             </sdHeading>
-            <img class="auth-content-figure" :src="require('@/static/img/auth/Illustration.png')" alt="" />
           </Content>
         </div>
       </Aside>

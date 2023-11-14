@@ -5,12 +5,92 @@
     :mode="mode"
     :theme="darkMode ? 'dark' : 'light'"
   >
-    <a-menu-item @click="toggleCollapsed" key="starter">
-      <router-link to="/">
-        <sdFeatherIcons type="circle" />
-        <span> Blank Page </span>
-      </router-link>
-    </a-menu-item>
+    <a-sub-menu key="dashboard">
+      <template v-slot:title>
+        <sdFeatherIcons type="home" /><span>Dashboard</span>
+      </template>
+      <a-menu-item @click="toggleCollapsed" key="light">
+        <a
+          @click="
+            (e) => {
+              e.preventDefault();
+              toggleCollapsed();
+              modeChangeLight();
+            }
+          "
+          to="#"
+        >
+          Light Mode
+        </a>
+      </a-menu-item>
+      <a-menu-item @click="toggleCollapsed" key="dark">
+        <a
+          @click="
+            (e) => {
+              e.preventDefault();
+              toggleCollapsed();
+              modeChangeDark();
+            }
+          "
+          to="#"
+        >
+          Dark Mode
+        </a>
+      </a-menu-item>
+    </a-sub-menu>
+    
+    <a-menu-item-group key="pages">
+      <template v-slot:title>
+        <p class="sidebar-nav-title">Pages</p>
+      </template>
+      <a-menu-item @click="toggleCollapsed" key="device">
+        <router-link to="/">
+          <sdFeatherIcons type="airplay" />
+          <span> 장비 현황 </span>
+        </router-link>
+      </a-menu-item>
+
+      <a-sub-menu key="users">
+        <template v-slot:title
+          ><sdFeatherIcons type="users" /><span>Users</span></template
+        >
+        <a-menu-item @click="toggleCollapsed" key="team">
+          <router-link to="/app/users/team"> Team </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="dataTable">
+          <router-link to="/app/users/dataTable"> Users table </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+      
+      <a-sub-menu key="pricing">
+        <template v-slot:title
+          ><sdFeatherIcons type="dollar-sign" /><span>결재</span></template
+        >
+        <a-menu-item @click="toggleCollapsed" key="write">
+          <router-link to="/add-approval">
+            신청
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="view">
+          <router-link to="#">
+            확인
+          </router-link>
+        </a-menu-item>
+        <a-menu-item @click="toggleCollapsed" key="return">
+          <router-link to="#">
+            반려
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
+
+      <a-menu-item @click="toggleCollapsed" key="blank">
+        <router-link to="/blank">
+          <sdFeatherIcons type="circle" />
+          <span> Blank Page </span>
+        </router-link>
+      </a-menu-item>
+
+    </a-menu-item-group>
   </a-menu>
 </template>
 <script>

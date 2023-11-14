@@ -1,34 +1,28 @@
 <template>
-  <MainWraper>
-    <SocialIcon :bgColor="bgColor">
-      <font-awesome-icon
-        class="super-crazy-colors"
-        :icon="icon"
-        size="2x"
-        :style="{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }"
-      />
-    </SocialIcon>
-    <sdHeading as="h1">{{ title }}</sdHeading>
-    <p>{{ subTitle }}</p>
+  <MainWraper style="text-align: center;">
+    <router-link :to="path">
+      <img :src="src" alt="Image" />
+      <sdHeading as="h1">{{ title }}</sdHeading>
+      <p>{{ subTitle }}</p>
+    </router-link>
   </MainWraper>
 </template>
 
 <script>
-import { MainWraper, SocialIcon } from './overview-style';
+import { MainWraper } from './overview-style';
 import VueTypes from 'vue-types';
 import { defineComponent } from 'vue';
 
 const SocialMediaContent = defineComponent({
   name: 'SocialMediaContent',
   props: {
-    icon: VueTypes.object,
-    bgColor: VueTypes.string.isRequired,
     title: VueTypes.string.isRequired,
     subTitle: VueTypes.string.isRequired,
+    src: VueTypes.string.isRequired,
+    path: VueTypes.string.isRequired,
   },
   components: {
     MainWraper,
-    SocialIcon,
   },
 });
 
